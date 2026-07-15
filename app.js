@@ -16,16 +16,22 @@ if (typeof module !== 'undefined') module.exports = { calculateLoad };
 if (typeof document !== 'undefined') {
   const form = document.querySelector('#load-form');
   const message = document.querySelector('#message');
+  const messageValue = document.querySelector('#message-value');
+  const messageDetail = document.querySelector('#message-detail');
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     try {
       const load = calculateLoad(form.duration.value, form.rpe.value);
-      message.className = 'result';
-      message.textContent = `Session training load: ${load} AU`;
+      message.dataset.state = 'result';
+      message.setAttribute('role', 'status');
+      messageValue.textContent = load.toLocaleString('en-US');
+      messageDetail.textContent = 'Duration × session RPE. Compare this with the same runner’s recent sessions.';
     } catch (error) {
-      message.className = 'error';
-      message.textContent = error.message;
+      message.dataset.state = 'error';
+      message.setAttribute('role', 'alert');
+      messageValue.textContent = '—';
+      messageDetail.textContent = error.message;
     }
   });
 }
