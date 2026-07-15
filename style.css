@@ -10,7 +10,7 @@ label { margin-top: 8px; font-weight: 700; }
 input, button { width: 100%; min-height: 48px; border-radius: 10px; font: inherit; }
 input { padding: 10px 12px; border: 1px solid #8a9785; }
 button { margin-top: 12px; border: 0; background: #294414; color: #fff; font-weight: 800; cursor: pointer; }
-input:focus-visible, button:focus-visible { outline: 3px solid #d4f06a; outline-offset: 2px; }
+input:focus-visible, button:focus-visible { outline: 3px solid #172018; outline-offset: 2px; }
 .result, .error { min-height: 24px; font-weight: 800; }
 .result { color: #294414; }
 .error { color: #a1261c; }
