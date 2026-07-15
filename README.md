@@ -16,7 +16,7 @@ Run `node test.js`. No package installation is required.
 
 ## Privacy
 
-The tool has no accounts, analytics, storage, external dependencies, or network requests. Inputs remain in the browser.
+The tool has no accounts, analytics, storage, or external dependencies. It does not contact external services and does not transmit or store inputs. When hosted, it only loads the site's own static resources.
 
 ## Contributing
 

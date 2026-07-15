@@ -12,9 +12,19 @@
 
 - Duration accepts whole numbers from 1 to 600 minutes.
 - RPE accepts whole numbers from 1 to 10.
-- No accounts, storage, analytics, network requests, third-party dependencies, or build step.
+- No accounts, storage, analytics, external/API requests, third-party dependencies, or build step; inputs are not transmitted.
 - The page must work with keyboard navigation and current mobile and desktop browsers.
 - Repository name is `runner-training-load-calculator` and default branch is `main`.
+
+## Release Checklist
+
+- [ ] `1 × 1 = 1 AU` and `600 × 10 = 6000 AU`.
+- [ ] Each field missing and each field decimal shows the correct error.
+- [ ] A valid result followed by invalid input clears or replaces the result with the error.
+- [ ] Tab navigation and Enter submission work.
+- [ ] The `aria-live` region announces results and errors.
+- [ ] Layout remains usable at 375px wide.
+- [ ] Browser console has no errors.
 
 ---
 
@@ -91,7 +101,7 @@ git commit -m "feat: calculate session training load"
 - Consumes: `calculateLoad(duration, rpe)` from Task 1 and form fields `#duration`, `#rpe`.
 - Produces: inline text in `#message`; no persistence or network activity.
 
-- [ ] **Step 1: Add a browser interaction check to `test.js`**
+- [ ] **Step 1: Add a boundary unit check to `test.js`**
 
 Append:
 
@@ -233,7 +243,7 @@ Run `node test.js`. No package installation is required.
 
 ## Privacy
 
-The tool has no accounts, analytics, storage, external dependencies, or network requests. Inputs remain in the browser.
+The tool has no accounts, analytics, storage, or external dependencies. It does not contact external services and does not transmit or store inputs. When hosted, it only loads the site's own static resources.
 
 ## Contributing
 

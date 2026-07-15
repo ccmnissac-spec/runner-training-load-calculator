@@ -20,7 +20,7 @@ The result is an internal workload estimate, not a medical assessment or a presc
 - The result updates when the user submits the form.
 - Invalid or missing values show a clear inline error and no result.
 - The page explains the formula and the limits of the metric.
-- No accounts, storage, analytics, network requests, or third-party dependencies.
+- No accounts, storage, analytics, external/API requests, or third-party dependencies; inputs are not transmitted.
 
 ## Files
 
