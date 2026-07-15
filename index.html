@@ -8,23 +8,84 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <p class="eyebrow">RUNNER TOOL</p>
-    <h1>Training Load Calculator</h1>
-    <p>Estimate internal session load using duration × perceived exertion.</p>
-    <form id="load-form" novalidate>
-      <label for="duration">Duration (minutes)</label>
-      <input id="duration" name="duration" type="number" min="1" max="600" step="1" required>
-      <label for="rpe">Session RPE (1–10)</label>
-      <input id="rpe" name="rpe" type="number" min="1" max="10" step="1" required>
-      <button type="submit">Calculate load</button>
-    </form>
-    <p id="message" aria-live="polite"></p>
-    <section>
-      <h2>How it works</h2>
-      <p>Session training load = duration in minutes × session RPE. The result is shown in arbitrary units (AU).</p>
-      <p class="note">Use this as one workload estimate, not as medical advice or a stand-alone training prescription.</p>
+  <main class="site-shell">
+    <header class="topbar">
+      <p class="wordmark">RTLC<span>/01</span></p>
+      <p class="topbar-note">A quiet tool for noisy training weeks</p>
+    </header>
+
+    <div class="hero-grid">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span aria-hidden="true">+</span> RUNNER / FIELD NOTE</p>
+        <h1 id="page-title">Measure the work <em>before</em> you add more.</h1>
+        <p class="lede">A quick estimate of internal session load, built for the moment after a run when the plan meets the actual day.</p>
+        <dl class="formula-strip">
+          <div>
+            <dt>Formula</dt>
+            <dd>Minutes × RPE</dd>
+          </div>
+          <div>
+            <dt>Scale</dt>
+            <dd>1–10 effort</dd>
+          </div>
+          <div>
+            <dt>Output</dt>
+            <dd>AU estimate</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="calculator-panel" aria-labelledby="calculator-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Session input</p>
+            <h2 id="calculator-title">Log the session</h2>
+          </div>
+          <span class="panel-index">01</span>
+        </div>
+
+        <form id="load-form" novalidate>
+          <div class="field-grid">
+            <label class="field" for="duration">
+              <span class="field-label">Duration <small>minutes</small></span>
+              <input id="duration" name="duration" type="number" min="1" max="600" step="1" inputmode="numeric" aria-describedby="duration-hint" required>
+              <span class="field-hint" id="duration-hint">Whole minutes, 1–600</span>
+            </label>
+
+            <label class="field" for="rpe">
+              <span class="field-label">Session RPE <small>effort</small></span>
+              <input id="rpe" name="rpe" type="number" min="1" max="10" step="1" inputmode="numeric" aria-describedby="rpe-hint" required>
+              <span class="field-hint" id="rpe-hint">Whole number, 1–10</span>
+            </label>
+          </div>
+
+          <button type="submit">Calculate session load <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <div id="message" class="result-card" data-state="empty" role="status" aria-live="polite" aria-atomic="true">
+          <span class="result-label">Current session load</span>
+          <span id="message-value" class="result-value">—</span>
+          <span class="result-unit">AU</span>
+          <span id="message-detail" class="result-detail">Submit a completed session to see the estimate.</span>
+        </div>
+      </section>
+    </div>
+
+    <section class="limits" aria-labelledby="limits-title">
+      <div>
+        <p class="section-label">Use the number properly</p>
+        <h2 id="limits-title">A useful signal, not a verdict.</h2>
+      </div>
+      <div class="limits-copy">
+        <p>AU helps compare sessions for the same runner over time. It does not set a universal safe limit or replace recovery, coaching, or medical advice.</p>
+        <p class="privacy-note"><span aria-hidden="true">●</span> Runs locally in your browser. No accounts, analytics, storage, or external requests.</p>
+      </div>
     </section>
+
+    <footer>
+      <span>RUNNER TRAINING LOAD CALCULATOR</span>
+      <span>DEPENDENCY-FREE / 2026</span>
+    </footer>
   </main>
   <script src="app.js"></script>
 </body>
