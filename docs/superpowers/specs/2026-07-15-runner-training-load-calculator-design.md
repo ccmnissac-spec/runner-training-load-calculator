@@ -27,7 +27,7 @@ The result is an internal workload estimate, not a medical assessment or a presc
 - `index.html`: accessible form, result, short explanation, and disclaimer.
 - `style.css`: responsive presentation with readable contrast and visible focus states.
 - `app.js`: input validation, calculation, and browser interaction.
-- `test.html`: one browser-runnable self-check for valid calculation and invalid input.
+- `test.js`: one Node.js built-in self-check for valid calculation and invalid input.
 - `README.md`: purpose, usage, formula, local opening instructions, limitations, and contribution guidance.
 - `LICENSE`: MIT License.
 
