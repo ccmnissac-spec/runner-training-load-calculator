@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculate session training load from duration and RPE.">
+  <title>Runner Training Load Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">RUNNER TOOL</p>
+    <h1>Training Load Calculator</h1>
+    <p>Estimate internal session load using duration × perceived exertion.</p>
+    <form id="load-form" novalidate>
+      <label for="duration">Duration (minutes)</label>
+      <input id="duration" name="duration" type="number" min="1" max="600" step="1" required>
+      <label for="rpe">Session RPE (1–10)</label>
+      <input id="rpe" name="rpe" type="number" min="1" max="10" step="1" required>
+      <button type="submit">Calculate load</button>
+    </form>
+    <p id="message" aria-live="polite"></p>
+    <section>
+      <h2>How it works</h2>
+      <p>Session training load = duration in minutes × session RPE. The result is shown in arbitrary units (AU).</p>
+      <p class="note">Use this as one workload estimate, not as medical advice or a stand-alone training prescription.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

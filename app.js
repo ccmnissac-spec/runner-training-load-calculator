@@ -12,3 +12,20 @@ function calculateLoad(duration, rpe) {
 }
 
 if (typeof module !== 'undefined') module.exports = { calculateLoad };
+
+if (typeof document !== 'undefined') {
+  const form = document.querySelector('#load-form');
+  const message = document.querySelector('#message');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    try {
+      const load = calculateLoad(form.duration.value, form.rpe.value);
+      message.className = 'result';
+      message.textContent = `Session training load: ${load} AU`;
+    } catch (error) {
+      message.className = 'error';
+      message.textContent = error.message;
+    }
+  });
+}
